@@ -1,0 +1,43 @@
+[Unit]
+Description=Bot de turnos - Embajada de Austria (Buenos Aires)
+Documentation=https://appointment.bmeia.gv.at/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+
+# Ajustá estos tres a tu VPS.
+User=turnos
+Group=turnos
+WorkingDirectory=/opt/bot-embajada
+
+# El .env con el token de Telegram. Debe ser 600 y del usuario de arriba.
+EnvironmentFile=/opt/bot-embajada/.env
+
+ExecStart=/opt/bot-embajada/.venv/bin/python -m bot.main
+
+# Si el bot se cae, se levanta solo. Si frena por captcha sale con código 2:
+# ahí NO queremos que reintente en loop, queremos que quede parado y avisado.
+Restart=on-failure
+RestartSec=60
+SuccessExitStatus=0 2
+
+# Reinicio prolijo: main.py atrapa SIGTERM y cierra el ciclo actual.
+KillSignal=SIGTERM
+TimeoutStopSec=90
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bot-embajada
+
+# --- Endurecimiento básico ---
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+# Único lugar donde el bot escribe: estado, logs y screenshots.
+ReadWritePaths=/opt/bot-embajada/data /opt/bot-embajada/logs
+
+[Install]
+WantedBy=multi-user.target

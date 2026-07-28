@@ -1,0 +1,95 @@
+name: Chequear turnos
+
+on:
+  schedule:
+    # Cada 30 minutos. OJO: el cron de GitHub Actions es UTC y no es puntual;
+    # en la práctica se atrasa entre 5 y 20 minutos, y con más si el runner
+    # está congestionado. Si necesitás precisión, usá el VPS con systemd.
+    - cron: "*/30 * * * *"
+  workflow_dispatch:        # para dispararlo a mano desde la pestaña Actions
+
+# Nunca dos corridas en paralelo: pisarían el state.json y castigarían al
+# servidor de la embajada.
+concurrency:
+  group: chequeo-turnos
+  cancel-in-progress: false
+
+permissions:
+  contents: write           # necesario para commitear data/state.json
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # El paso final hace `git pull --rebase`, que no funciona bien sobre
+          # el clon shallow que trae checkout por defecto.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Bajar Chromium es lo más caro de la corrida (~90 s). Cacheado son ~5 s,
+      # y en Actions cada minuto cuenta.
+      - name: Cache de Chromium
+        id: cache-chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+
+      - name: Instalar Chromium de Playwright
+        if: steps.cache-chromium.outputs.cache-hit != 'true'
+        run: python -m playwright install --with-deps chromium
+
+      - name: Instalar librerías del sistema
+        if: steps.cache-chromium.outputs.cache-hit == 'true'
+        run: python -m playwright install-deps chromium
+
+      - name: Chequear turnos
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DATE_TO: "2027-01-31"
+          HEARTBEAT_HOUR: "9"
+          LOG_LEVEL: INFO
+          # En CI no tiene sentido mandar el screenshot: el archivo se pierde
+          # con el runner. Se sube como artifact más abajo.
+          SEND_SCREENSHOTS: "false"
+        run: python -m bot.main --once
+
+      - name: Guardar screenshots del fallo
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-${{ github.run_id }}
+          path: data/screenshots/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Persistir el estado
+        # always(): si el chequeo falló también queremos guardar el contador de
+        # fallas consecutivas, si no la alerta de "3 corridas fallidas" nunca salta.
+        if: always()
+        run: |
+          git config user.name  "bot-turnos"
+          git config user.email "bot-turnos@users.noreply.github.com"
+          git add -f data/state.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Sin cambios en el estado."
+          else
+            git commit -m "estado: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            # El repo puede haber avanzado mientras corría el chequeo.
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

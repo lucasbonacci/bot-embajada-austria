@@ -1,0 +1,18 @@
+# Secretos
+.env
+
+# Estado y artefactos de runtime
+data/screenshots/
+logs/
+*.log
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# SO
+.DS_Store
