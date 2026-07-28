@@ -205,6 +205,12 @@ class TelegramNotifier:
             lineas.append(f"<b>Último chequeo:</b> {ts} — {estado}")
             if last_check.get("status") == "ok":
                 lineas.append(f"<b>Turnos vistos:</b> {last_check.get('slot_count', 0)}")
+                # Que el heartbeat diga cuántas semanas barrió es lo que lo hace
+                # útil: "0 turnos en 24 semanas" tranquiliza, "0 turnos en 1
+                # semana" es una alarma.
+                semanas = last_check.get("weeks_scanned")
+                if semanas:
+                    lineas.append(f"<b>Semanas barridas:</b> {semanas}")
             elif last_check.get("detail"):
                 lineas.append(f"<code>{html.escape(str(last_check['detail'])[:200])}</code>")
 

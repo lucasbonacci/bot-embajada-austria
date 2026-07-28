@@ -89,7 +89,8 @@ class Bot:
             self.log.warning("el barrido no cubrió todo el rango",
                              extra={"detalle": result.horizon_note})
 
-        self.storage.record_check("ok", slot_count=result.count, new_count=len(nuevos))
+        self.storage.record_check("ok", slot_count=result.count, new_count=len(nuevos),
+                                  weeks_scanned=result.weeks_scanned)
 
         if verbose:
             self._print_result(result, nuevos, desaparecidos, primera_vez)

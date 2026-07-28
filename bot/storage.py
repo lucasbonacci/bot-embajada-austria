@@ -89,14 +89,17 @@ class Storage:
 
     # ------------------------------------------------------------ historial
 
-    def record_check(self, status: str, *, slot_count: int = 0,
-                     new_count: int = 0, detail: Optional[str] = None) -> None:
+    def record_check(self, status: str, *, slot_count: int = 0, new_count: int = 0,
+                     weeks_scanned: int = 0, detail: Optional[str] = None) -> None:
         now = datetime.now().astimezone()
         entry = {
             "ts": now.isoformat(),
             "status": status,           # ok | error | captcha
             "slot_count": slot_count,
             "new_count": new_count,
+            # Sin esto, "0 turnos" es ambiguo: no se puede distinguir un barrido
+            # completo sin disponibilidad de un barrido roto que miró una semana.
+            "weeks_scanned": weeks_scanned,
         }
         if detail:
             entry["detail"] = detail[:300]
