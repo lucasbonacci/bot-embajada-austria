@@ -189,8 +189,19 @@ qué apareció y cuándo.
 
 **Desventajas, que son reales:**
 
-- **El cron de GitHub no es puntual.** Está documentado que se atrasa, típicamente
-  5-20 minutos y a veces más. Un `*/30` real puede terminar corriendo cada 45.
+- **El cron de GitHub no descarta algunas corridas: descarta la mayoría.** Esto no es
+  una estimación, está medido en este repo con `cron: */30` y repo público:
+
+  | | |
+  |---|---|
+  | Intervalo programado | 30 min |
+  | Intervalo real | **85 min promedio** (mínimo 66, máximo 110) |
+  | Corridas esperadas en la ventana | 11 |
+  | Corridas efectivas | **4** (se descartó el 64%) |
+
+  El cron de Actions es *best-effort*: cuando hay congestión, GitHub saltea
+  ejecuciones enteras sin avisar. Para cadencia confiable hay que usar el VPS.
+  Si te importa agarrar una cancelación, este es **el** motivo para no usar Actions.
 - **GitHub desactiva el cron después de 60 días sin actividad** en el repo. Como el
   bot commitea el estado en cada corrida, en la práctica no pasa, pero tenelo presente.
 - **El repo tiene que ser público**, por los minutos (ver abajo). Eso hace público el
@@ -223,8 +234,15 @@ Setup:
 4. El workflow ya está en `.github/workflows/check.yml`. Probalo a mano con
    *Actions → Chequear turnos → Run workflow*.
 
-**Cuál elegir:** si el turno te importa de verdad, systemd. El atraso del cron de
-GitHub es justo lo que te puede costar una cancelación que voló en 10 minutos.
+**Cuál elegir:** si el turno te importa de verdad, systemd. Actions te da en la
+práctica un chequeo cada ~85 minutos: suficiente para las cargas grandes de la
+embajada, que suelen quedar disponibles algunas horas, pero vas a perder casi
+seguro las cancelaciones sueltas.
+
+**Migrar de Actions al VPS** es directo y no se pierde nada: seguí la sección A
+(el `.service` ya está en `deploy/`), copiá `data/state.json` del repo al VPS para
+no arrancar de cero, y desactivá el workflow desde *Actions → Chequear turnos →
+`···` → Disable workflow* para no recibir avisos duplicados.
 
 ---
 
