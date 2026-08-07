@@ -3,13 +3,6 @@
   "known_slots": [],
   "checks": [
     {
-      "ts": "2026-08-06T11:01:16.650806+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 23
-    },
-    {
       "ts": "2026-08-06T13:02:20.549713+00:00",
       "status": "ok",
       "slot_count": 0,
@@ -71,15 +64,24 @@
       "slot_count": 0,
       "new_count": 0,
       "weeks_scanned": 22
+    },
+    {
+      "ts": "2026-08-07T11:42:33.134322+00:00",
+      "status": "error",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 0,
+      "detail": "[estructura] No se encontró el desplegable de servicios (#CalendarId). El sitio cambió de estructura."
     }
   ],
-  "consecutive_failures": 0,
+  "consecutive_failures": 1,
   "last_check": {
-    "ts": "2026-08-07T10:51:50.672884+00:00",
-    "status": "ok",
+    "ts": "2026-08-07T11:42:33.134322+00:00",
+    "status": "error",
     "slot_count": 0,
     "new_count": 0,
-    "weeks_scanned": 22
+    "weeks_scanned": 0,
+    "detail": "[estructura] No se encontró el desplegable de servicios (#CalendarId). El sitio cambió de estructura."
   },
   "last_success": {
     "ts": "2026-08-07T10:51:50.672884+00:00",
@@ -89,7 +91,7 @@
     "weeks_scanned": 22
   },
   "last_heartbeat_date": "2026-08-06",
-  "last_structure_alert": null,
+  "last_structure_alert": "2026-08-07T11:42:33.771880+00:00",
   "last_failure_alert": null,
   "halted": false,
   "halted_reason": null
