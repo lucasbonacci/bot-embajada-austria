@@ -149,18 +149,25 @@
       "slot_count": 0,
       "new_count": 0,
       "weeks_scanned": 22
+    },
+    {
+      "ts": "2026-08-08T04:35:12.686521+00:00",
+      "status": "ok",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 22
     }
   ],
   "consecutive_failures": 0,
   "last_check": {
-    "ts": "2026-08-08T03:21:17.497629+00:00",
+    "ts": "2026-08-08T04:35:12.686521+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
     "weeks_scanned": 22
   },
   "last_success": {
-    "ts": "2026-08-08T03:21:17.497629+00:00",
+    "ts": "2026-08-08T04:35:12.686521+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
