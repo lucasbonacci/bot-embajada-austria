@@ -3,20 +3,6 @@
   "known_slots": [],
   "checks": [
     {
-      "ts": "2026-08-25T14:40:16.902226+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-25T15:38:00.020437+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
       "ts": "2026-08-25T16:31:12.852790+00:00",
       "status": "ok",
       "slot_count": 0,
@@ -218,18 +204,25 @@
       "slot_count": 0,
       "new_count": 0,
       "weeks_scanned": 19
+    },
+    {
+      "ts": "2026-08-26T16:14:35.602100+00:00",
+      "status": "ok",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 19
     }
   ],
   "consecutive_failures": 0,
   "last_check": {
-    "ts": "2026-08-26T14:40:05.801965+00:00",
+    "ts": "2026-08-26T16:14:35.602100+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
     "weeks_scanned": 19
   },
   "last_success": {
-    "ts": "2026-08-26T14:40:05.801965+00:00",
+    "ts": "2026-08-26T16:14:35.602100+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
