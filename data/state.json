@@ -3,69 +3,6 @@
   "known_slots": [],
   "checks": [
     {
-      "ts": "2026-08-26T09:11:09.082092+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-26T10:06:05.685687+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-26T11:01:26.818361+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-26T11:37:37.811587+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-26T12:42:08.681196+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-26T13:51:25.292306+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-26T14:40:05.801965+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-26T16:14:35.602100+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
-      "ts": "2026-08-26T18:14:22.118251+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 19
-    },
-    {
       "ts": "2026-08-26T20:30:12.545273+00:00",
       "status": "ok",
       "slot_count": 0,
@@ -85,24 +22,31 @@
       "slot_count": 0,
       "new_count": 0,
       "weeks_scanned": 19
+    },
+    {
+      "ts": "2026-08-27T19:24:20.237013+00:00",
+      "status": "ok",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 19
     }
   ],
   "consecutive_failures": 0,
   "last_check": {
-    "ts": "2026-08-27T08:47:28.513936+00:00",
+    "ts": "2026-08-27T19:24:20.237013+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
     "weeks_scanned": 19
   },
   "last_success": {
-    "ts": "2026-08-27T08:47:28.513936+00:00",
+    "ts": "2026-08-27T19:24:20.237013+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
     "weeks_scanned": 19
   },
-  "last_heartbeat_date": "2026-08-26",
+  "last_heartbeat_date": "2026-08-27",
   "last_structure_alert": "2026-08-07T11:42:33.771880+00:00",
   "last_failure_alert": null,
   "halted": false,
