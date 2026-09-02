@@ -1,16 +1,7 @@
 {
   "version": 1,
-  "known_slots": [
-    "2026-09-03T10:00"
-  ],
+  "known_slots": [],
   "checks": [
-    {
-      "ts": "2026-09-01T10:19:13.861661+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 18
-    },
     {
       "ts": "2026-09-01T15:02:58.927947+00:00",
       "status": "ok",
@@ -52,24 +43,31 @@
       "slot_count": 1,
       "new_count": 1,
       "weeks_scanned": 1
+    },
+    {
+      "ts": "2026-09-02T12:13:56.728828+00:00",
+      "status": "ok",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 18
     }
   ],
   "consecutive_failures": 0,
   "last_check": {
-    "ts": "2026-09-02T07:18:03.650846+00:00",
+    "ts": "2026-09-02T12:13:56.728828+00:00",
     "status": "ok",
-    "slot_count": 1,
-    "new_count": 1,
-    "weeks_scanned": 1
+    "slot_count": 0,
+    "new_count": 0,
+    "weeks_scanned": 18
   },
   "last_success": {
-    "ts": "2026-09-02T07:18:03.650846+00:00",
+    "ts": "2026-09-02T12:13:56.728828+00:00",
     "status": "ok",
-    "slot_count": 1,
-    "new_count": 1,
-    "weeks_scanned": 1
+    "slot_count": 0,
+    "new_count": 0,
+    "weeks_scanned": 18
   },
-  "last_heartbeat_date": "2026-09-01",
+  "last_heartbeat_date": "2026-09-02",
   "last_structure_alert": "2026-08-07T11:42:33.771880+00:00",
   "last_failure_alert": null,
   "halted": false,
