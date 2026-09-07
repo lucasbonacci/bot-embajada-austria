@@ -3,20 +3,6 @@
   "known_slots": [],
   "checks": [
     {
-      "ts": "2026-09-06T19:22:52.337723+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 17
-    },
-    {
-      "ts": "2026-09-06T21:31:39.103416+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 17
-    },
-    {
       "ts": "2026-09-06T23:25:53.331577+00:00",
       "status": "ok",
       "slot_count": 0,
@@ -50,15 +36,24 @@
       "slot_count": 0,
       "new_count": 0,
       "weeks_scanned": 17
+    },
+    {
+      "ts": "2026-09-07T21:41:33.182028+00:00",
+      "status": "error",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 0,
+      "detail": "TransientError: El sitio respondió 500 en https://appointment.bmeia.gv.at/?Office=buenos-aires"
     }
   ],
-  "consecutive_failures": 0,
+  "consecutive_failures": 1,
   "last_check": {
-    "ts": "2026-09-07T18:04:02.611314+00:00",
-    "status": "ok",
+    "ts": "2026-09-07T21:41:33.182028+00:00",
+    "status": "error",
     "slot_count": 0,
     "new_count": 0,
-    "weeks_scanned": 17
+    "weeks_scanned": 0,
+    "detail": "TransientError: El sitio respondió 500 en https://appointment.bmeia.gv.at/?Office=buenos-aires"
   },
   "last_success": {
     "ts": "2026-09-07T18:04:02.611314+00:00",
