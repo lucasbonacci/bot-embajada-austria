@@ -36,24 +36,31 @@
       "slot_count": 0,
       "new_count": 0,
       "weeks_scanned": 14
+    },
+    {
+      "ts": "2026-10-03T14:23:13.624665+00:00",
+      "status": "ok",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 14
     }
   ],
   "consecutive_failures": 0,
   "last_check": {
-    "ts": "2026-10-03T09:23:11.746471+00:00",
+    "ts": "2026-10-03T14:23:13.624665+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
     "weeks_scanned": 14
   },
   "last_success": {
-    "ts": "2026-10-03T09:23:11.746471+00:00",
+    "ts": "2026-10-03T14:23:13.624665+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
     "weeks_scanned": 14
   },
-  "last_heartbeat_date": "2026-10-02",
+  "last_heartbeat_date": "2026-10-03",
   "last_structure_alert": "2026-08-07T11:42:33.771880+00:00",
   "last_failure_alert": "2026-09-08T02:44:16.237988+00:00",
   "halted": false,
