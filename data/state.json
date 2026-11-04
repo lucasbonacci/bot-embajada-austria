@@ -3,13 +3,6 @@
   "known_slots": [],
   "checks": [
     {
-      "ts": "2026-11-03T18:33:33.006716+00:00",
-      "status": "ok",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 12
-    },
-    {
       "ts": "2026-11-03T23:51:29.738971+00:00",
       "status": "ok",
       "slot_count": 0,
@@ -30,19 +23,25 @@
       "new_count": 0,
       "weeks_scanned": 0,
       "detail": "TransientError: Timeout abriendo https://appointment.bmeia.gv.at/?Office=buenos-aires: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://appointment.bmeia.gv.at/?Office=buenos-aires\", waiting until \"networkidle\"\n"
+    },
+    {
+      "ts": "2026-11-04T20:14:07.526833+00:00",
+      "status": "ok",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 12
     }
   ],
-  "consecutive_failures": 1,
+  "consecutive_failures": 0,
   "last_check": {
-    "ts": "2026-11-04T12:47:37.894702+00:00",
-    "status": "error",
+    "ts": "2026-11-04T20:14:07.526833+00:00",
+    "status": "ok",
     "slot_count": 0,
     "new_count": 0,
-    "weeks_scanned": 0,
-    "detail": "TransientError: Timeout abriendo https://appointment.bmeia.gv.at/?Office=buenos-aires: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://appointment.bmeia.gv.at/?Office=buenos-aires\", waiting until \"networkidle\"\n"
+    "weeks_scanned": 12
   },
   "last_success": {
-    "ts": "2026-11-04T04:32:17.609082+00:00",
+    "ts": "2026-11-04T20:14:07.526833+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
