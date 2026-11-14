@@ -3,14 +3,6 @@
   "known_slots": [],
   "checks": [
     {
-      "ts": "2026-11-13T16:42:36.553277+00:00",
-      "status": "error",
-      "slot_count": 0,
-      "new_count": 0,
-      "weeks_scanned": 0,
-      "detail": "TransientError: Timeout abriendo https://appointment.bmeia.gv.at/?Office=buenos-aires: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://appointment.bmeia.gv.at/?Office=buenos-aires\", waiting until \"networkidle\"\n"
-    },
-    {
       "ts": "2026-11-13T22:21:27.939268+00:00",
       "status": "ok",
       "slot_count": 0,
@@ -37,18 +29,25 @@
       "slot_count": 0,
       "new_count": 0,
       "weeks_scanned": 11
+    },
+    {
+      "ts": "2026-11-14T20:51:52.378214+00:00",
+      "status": "ok",
+      "slot_count": 0,
+      "new_count": 0,
+      "weeks_scanned": 11
     }
   ],
   "consecutive_failures": 0,
   "last_check": {
-    "ts": "2026-11-14T16:20:01.329658+00:00",
+    "ts": "2026-11-14T20:51:52.378214+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
     "weeks_scanned": 11
   },
   "last_success": {
-    "ts": "2026-11-14T16:20:01.329658+00:00",
+    "ts": "2026-11-14T20:51:52.378214+00:00",
     "status": "ok",
     "slot_count": 0,
     "new_count": 0,
